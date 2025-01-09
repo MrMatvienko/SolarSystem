@@ -1,0 +1,81 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  margin: 0;
+}
+.space {
+  perspective: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.sun {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #dba134, #c79c28);
+  border-radius: 50%;
+  box-shadow: 0px 0px 60px rgba(202, 51, 51, 0.9),
+    inset 0px 0px 10px rgba(226, 14, 14, 0.9);
+  z-index: 2;
+}
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotateX(60deg);
+  border-radius: 50%;
+  border: 1px solid white;
+  animation: rotateOrbit 10s linear infinite;
+}
+.mercure-orbite {
+  width: 400px;
+  height: 400px;
+}
+.mercure {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d3dbb0, #bec287);
+  transform-origin: center;
+  z-index: 1;
+  transition: z-index 0.1s ease;
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: translate(-50%, -50%) rotateX(60deg) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateX(60deg) rotate(360deg);
+  }
+}
+
+@keyframes rotatePlanet {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.venera-orbite {
+  width: 380px;
+  height: 380px;
+}
+.earth-orbite {
+  width: 480px;
+  height: 480px;
+}
